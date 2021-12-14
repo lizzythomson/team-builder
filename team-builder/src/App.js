@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import TeamMember from "./TeamMember";
+import TeamMember from "./Form";
 import TeamForm from "./TeamForm";
 import axios from "axios";
 
@@ -18,12 +18,11 @@ function App() {
     setFormValues({ ...formValues, [inputName]: inputValue });
   };
 
-  const submitForm = (event) => {
-    event.preventDefault();
+  const submitForm = () => {
     const newTeamMember = {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
-      role: formValues.role.trim(),
+      role: formValues.role,
     };
     setTeamMembers(teamMembers.concat(newTeamMember));
     setFormValues(initialFormValues);
@@ -43,10 +42,11 @@ function App() {
           submit={submitForm}
         ></TeamForm>
       </div>
-
-      {teamMembers.map((member) => {
-        return <TeamMember key={member.name} details={member} />;
-      })}
+      <div className="team-member-container">
+        {teamMembers.map((member) => {
+          return <TeamMember key={member.name} details={member} />;
+        })}
+      </div>
     </div>
   );
 }

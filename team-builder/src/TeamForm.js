@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function TeamForm(props) {
-  const { values, update, submit } = props;
+  const { values, update, submit, error } = props;
 
   const onChange = (event) => {
     const name = event.target.name;
@@ -49,6 +49,7 @@ export default function TeamForm(props) {
             <option value="UX Designer">UX Designer</option>
           </select>
         </label>
+        <div className="error">{error}</div>
         <div className="submit">
           <button>Submit</button>
         </div>

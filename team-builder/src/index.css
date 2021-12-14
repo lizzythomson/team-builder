@@ -19,9 +19,10 @@ body {
 }
 
 .team-member {
-  border: 1px solid black;
   min-width: 50%;
   background-color: whitesmoke;
+  box-shadow: 0px 3px 8px rgb(0 0 0 / 24%);
+  border-radius: 10px;
 }
 
 .inputs-container {
@@ -38,16 +39,29 @@ select {
   border-radius: 4px;
   padding: 8px 16px;
   color: #111;
+  box-shadow: 0px 3px 8px rgb(0 0 0 / 24%);
 }
 
 label {
   margin: 0.5%;
 }
 
+.error {
+  color: crimson;
+  font-size: 18px;
+  margin: 8px;
+}
+
 .submit button {
   margin-top: 12px;
-  border-radius: 4px;
+  box-shadow: 0px 3px 8px rgb(0 0 0 / 24%);
+  border-radius: 6px;
   padding: 6px 12px;
   background-color: whitesmoke;
-  border: 2px solid lightslategray;
+  border: none;
+}
+
+button:hover {
+  background-color: grey;
+  color: whitesmoke;
 }

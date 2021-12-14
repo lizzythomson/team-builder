@@ -30,7 +30,7 @@ export default function TeamForm(props) {
         <label>
           Email:
           <input
-            email="email"
+            name="email"
             type="email"
             placeholder={`Email`}
             value={values.email}
@@ -39,7 +39,7 @@ export default function TeamForm(props) {
         </label>
         <label>
           Role:
-          <select value={values.role} name="role">
+          <select value={values.role} name="role" onChange={onChange}>
             <option value="">--- Select Your Role ---</option>
             <option value="Techical Lead">Techical Lead</option>
             <option value="Manager">Manager</option>
